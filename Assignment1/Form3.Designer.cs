@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.VoiceSelect = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -57,7 +59,7 @@
             this.Speak.ForeColor = System.Drawing.Color.White;
             this.Speak.Location = new System.Drawing.Point(84, 324);
             this.Speak.Name = "Speak";
-            this.Speak.Size = new System.Drawing.Size(101, 43);
+            this.Speak.Size = new System.Drawing.Size(136, 43);
             this.Speak.TabIndex = 2;
             this.Speak.Text = "Speak";
             this.Speak.UseVisualStyleBackColor = false;
@@ -71,7 +73,7 @@
             this.Resume.ForeColor = System.Drawing.Color.White;
             this.Resume.Location = new System.Drawing.Point(259, 324);
             this.Resume.Name = "Resume";
-            this.Resume.Size = new System.Drawing.Size(94, 43);
+            this.Resume.Size = new System.Drawing.Size(127, 43);
             this.Resume.TabIndex = 3;
             this.Resume.Text = "Resume";
             this.Resume.UseVisualStyleBackColor = false;
@@ -83,9 +85,9 @@
             this.Pause.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Pause.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.Pause.ForeColor = System.Drawing.Color.White;
-            this.Pause.Location = new System.Drawing.Point(423, 324);
+            this.Pause.Location = new System.Drawing.Point(424, 324);
             this.Pause.Name = "Pause";
-            this.Pause.Size = new System.Drawing.Size(103, 43);
+            this.Pause.Size = new System.Drawing.Size(136, 43);
             this.Pause.TabIndex = 4;
             this.Pause.Text = "Pause";
             this.Pause.UseVisualStyleBackColor = false;
@@ -97,9 +99,9 @@
             this.Stop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Stop.Font = new System.Drawing.Font("Century Gothic", 14.25F);
             this.Stop.ForeColor = System.Drawing.Color.White;
-            this.Stop.Location = new System.Drawing.Point(616, 324);
+            this.Stop.Location = new System.Drawing.Point(587, 324);
             this.Stop.Name = "Stop";
-            this.Stop.Size = new System.Drawing.Size(94, 43);
+            this.Stop.Size = new System.Drawing.Size(123, 43);
             this.Stop.TabIndex = 5;
             this.Stop.Text = "Stop";
             this.Stop.UseVisualStyleBackColor = false;
@@ -143,12 +145,45 @@
             this.label3.Text = "Back";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(193)))), ((int)(((byte)(120)))));
+            this.label4.Location = new System.Drawing.Point(453, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(107, 33);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Voice :";
+            // 
+            // VoiceSelect
+            // 
+            this.VoiceSelect.BackColor = System.Drawing.Color.White;
+            this.VoiceSelect.CausesValidation = false;
+            this.VoiceSelect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.VoiceSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VoiceSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.VoiceSelect.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VoiceSelect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(193)))), ((int)(((byte)(120)))));
+            this.VoiceSelect.FormattingEnabled = true;
+            this.VoiceSelect.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.VoiceSelect.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.VoiceSelect.Location = new System.Drawing.Point(567, 22);
+            this.VoiceSelect.Name = "VoiceSelect";
+            this.VoiceSelect.Size = new System.Drawing.Size(143, 41);
+            this.VoiceSelect.TabIndex = 10;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(788, 450);
+            this.Controls.Add(this.VoiceSelect);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Stop);
@@ -177,5 +212,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox VoiceSelect;
     }
 }

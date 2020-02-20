@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Speech;
 using System.Speech.Synthesis;
+using System.Globalization;
 
 namespace Assignment1
 {
@@ -36,6 +37,7 @@ namespace Assignment1
         {
             System.Environment.Exit(1);
         }
+
         SpeechSynthesizer speechSynthesizerObj;
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -43,6 +45,7 @@ namespace Assignment1
             this.Speak.Enabled = false;
             this.Resume.Enabled = false;
             this.Pause.Enabled = false;
+            this.VoiceSelect.SelectedIndex = 0;
         }
 
         private void Speak_Click(object sender, EventArgs e)
@@ -51,7 +54,16 @@ namespace Assignment1
             if (richTextBox1.Text != "")
             {
                 speechSynthesizerObj = new SpeechSynthesizer();
+
+                if(VoiceSelect.SelectedIndex == 0)
+                {
+                    speechSynthesizerObj.SelectVoiceByHints(VoiceGender.Male);
+                }else if(VoiceSelect.SelectedIndex == 1)
+                {
+                    speechSynthesizerObj.SelectVoiceByHints(VoiceGender.Female);
+                }
                 speechSynthesizerObj.SpeakAsync(richTextBox1.Text);
+
                 Pause.Enabled = true;
                 Stop.Enabled = true;
             }
@@ -88,5 +100,6 @@ namespace Assignment1
             Main_Page.Show();
             this.Hide();
         }
+
     }
 }
